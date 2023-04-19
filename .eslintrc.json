@@ -1,0 +1,118 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb/hooks"
+  ],
+  "overrides": [
+    {
+      /**
+       * Overrides specific to only TypeScript
+       */
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "rules": {
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error", {
+          "args": "after-used",
+          "ignoreRestSiblings": true,
+          "argsIgnorePattern": "^_"
+        }],
+        "react/jsx-props-no-spreading": "off",
+        "@typescript-eslint/no-use-before-define": 2,
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/ban-ts-comment": "warn",
+        "react/require-default-props": "off"
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "prettier/prettier": "off",
+    "no-absolute-path": 0,
+    "import/prefer-default-export": "off",
+    "import/first": "warn",
+    "import/extensions": "off",
+    "import/no-unresolved": 0,
+    "max-len": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "import/namespace": "off",
+    "import/named": 2,
+    "no-use-before-define": "off",
+    "no-unused-vars": [
+      "warn",
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "max-lines": [
+      "error", { "max": 200, "skipComments": true, "skipBlankLines": true }],
+    "prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": true,
+        "allowUnboundThis": true
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "no-undef": "warn",
+    "no-extra-boolean-cast": "off",
+    "no-console": ["error", { "allow": ["error"] }],
+    "no-constant-condition": "off",
+    "no-redeclare": "off",
+    "prefer-destructuring": "off",
+    "require-atomic-updates": "off",
+    "no-return-await": "error",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all"
+      }
+    ],
+    "curly": ["error", "all"]
+  }
+}
+
