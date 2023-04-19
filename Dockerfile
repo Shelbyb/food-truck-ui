@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node package*.json ./
 
-RUN npm install
+RUN npm ci
 
 # This is needed to run the app in an alpine container
 RUN npm install -D --force @swc/core-linux-musl
@@ -22,9 +22,9 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node --from=dev /usr/src/app/package*.json ./
 
-COPY --chown=node:node --from=dev /usr/src/app/.next ./.next
+RUN npm ci --omit=dev
 
-RUN npm install --production
+COPY --chown=node:node --from=dev /usr/src/app/.next ./.next
 
 EXPOSE 3000
 

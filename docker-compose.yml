@@ -4,6 +4,8 @@ services:
   ui:
     build:
       context: .
+      args:
+        - NODE_ENV=development
     restart: unless-stopped
     command: npm run dev
     environment:
@@ -12,3 +14,4 @@ services:
       - '3000:3000'
     volumes:
       - ./:/usr/src/app
+      - /usr/src/app/node_modules

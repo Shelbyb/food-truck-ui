@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "docker": "docker compose -f docker-compose.yml up -d"
+    "docker": "docker compose -f docker-compose.yml up --build -d"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",

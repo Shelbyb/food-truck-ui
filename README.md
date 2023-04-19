@@ -1,4 +1,5 @@
 ## Food Truck Location App (UI)
+[Project Github repo](https://github.com/Shelbyb/food-truck-ui)
 
 ### Features
 * View food trucks around you, assuming you're in San Francisco
